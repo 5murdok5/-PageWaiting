@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body { text-align: center; padding: 150px; background-color: #003e71}
+        h1 { font-size: 50px; }
+        body { font: 20px Helvetica, sans-serif; color: #cccccc; }
+        article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+        a { color: #269C90; text-decoration: none; }
+        a:hover { color: #333; text-decoration: none; }
+        .logo{ width: 60%;}
+      </style>
+    <title>In Progress</title>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script>
+      function init() {
+        var stage = new createjs.Stage("AnimationCharge");
+        var circle = new createjs.Shape();
+        circle.graphics.beginFill("Crimson").drawCircle(0, 0, 50);
+        circle.x = 100;
+        circle.y = 100;
+        stage.addChild(circle);
+        createjs.Tween.get(circle, {loop: true})
+          .to({x: 400}, 1000, createjs.Ease.getPowInOut(4))
+           .to({alpha: 0, y: 75}, 600, createjs.Ease.getPowInOut(2))
+           .to({alpha: 0, y: 125}, 1000)
+          .to({alpha: 1, y: 100}, 900, createjs.Ease.getPowInOut(2))
+          .to({x: 100}, 800, createjs.Ease.getPowInOut(2));
+        createjs.Ticker.setFPS(60);
+        createjs.Ticker.addEventListener("tick", stage);
+      }
+    </script>
+  </head>
+  </head>
+  <body onload="init();">
+
+    <img class="logo" src="/assets/logoFedes.jpeg" alt="logoFedes">
+    <canvas id="AnimationCharge" width="500" height="200"></canvas>
+      <article>
+          <h1>Servicio en Mantenimiento!</h1>
+          <div>
+              <p>Disculpa por los inconvenientes, pronto estaremos de vuenta,puedes <a href="mailto:#">contactarnos aqui</a>, dejarnos un mensaje, trataremos de atender tu solicitud lo mas pronto posible</p>
+              <p>&mdash; The Team</p>
+          </div>
+      </article>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
